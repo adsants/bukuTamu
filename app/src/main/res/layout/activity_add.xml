@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <!--android.support.design.widget.TextInputLayout-->
+    <!--untuk text Hint Melayang-->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/input_nama"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:hint="Nama"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <RadioGroup
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
+        android:id="@+id/radio_kelamin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/input_radio_cowok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laki-Laki"/>
+        <RadioButton
+            android:id="@+id/input_radio_cewek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perempuan"/>
+
+    </RadioGroup>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/input_alamat"
+            android:layout_width="match_parent"
+            android:inputType="textMultiLine"
+            android:layout_height="wrap_content"
+            android:hint="Alamat"
+            android:minLines="5"
+            android:maxLines="10"
+            android:gravity="left|top"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        android:textAllCaps="false"/>
+</LinearLayout>
