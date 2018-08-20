@@ -1,5 +1,6 @@
 package com.adsants.bukutamusqllite;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,9 +32,11 @@ public class AddActivity extends AppCompatActivity {
         btn_simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),  "Nama : "+ input_nama.getText().toString() +", Alamatku adalah  : "+ input_alamat.getText().toString() , Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),  "Nama : "+ input_nama.getText().toString() +", Alamatku adalah  : "+ input_alamat.getText().toString() , Toast.LENGTH_LONG).show();
+                Snackbar.make(findViewById(R.id.til), "Contoh sebuah Snackbar", Snackbar.LENGTH_LONG).setAction("Action!", this).show();
             }
         });
+
 
         getSupportActionBar().setTitle("Tambah Data");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
