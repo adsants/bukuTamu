@@ -62,8 +62,8 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month_of_year, int day_of_month) {
                         // set day of month , month and year value in the edit text
-                        NumberFormat numberFormat = new DecimalFormat("00");
-                        MainActivity.tgl_akhir = year + "-" + numberFormat.format(( month_of_year +1 )) + "-" +
+                        NumberFormat numberFormat   = new DecimalFormat("00");
+                        MainActivity.tgl_akhir      = year + "-" + numberFormat.format(( month_of_year +1 )) + "-" +
                                 numberFormat.format(day_of_month);
                         input_akhir.setText(numberFormat.format(day_of_month) + "/" + numberFormat.format(( month_of_year +1 )) +
                                 "/" + year );

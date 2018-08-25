@@ -40,8 +40,8 @@ public class AddActivity extends AppCompatActivity {
         input_radio_cewek   = findViewById(R.id.input_radio_cewek);
         input_nama          = findViewById(R.id.input_nama);
         input_alamat        = findViewById(R.id.input_alamat);
-        btn_simpan        = findViewById(R.id.btn_simpan);
-        ripple_simpan        = findViewById(R.id.ripple_simpan);
+        btn_simpan          = findViewById(R.id.btn_simpan);
+        ripple_simpan       = findViewById(R.id.ripple_simpan);
 
         radio_kelamin.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

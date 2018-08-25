@@ -57,8 +57,8 @@ public class EditActivity extends AppCompatActivity {
         input_nama          = findViewById(R.id.input_nama);
         input_alamat        = findViewById(R.id.input_alamat);
         btn_simpan          = findViewById(R.id.btn_simpan);
-        input_tanggal        = findViewById(R.id.input_tanggal);
-        ripple_simpan        = findViewById(R.id.ripple_simpan);
+        input_tanggal       = findViewById(R.id.input_tanggal);
+        ripple_simpan       = findViewById(R.id.ripple_simpan);
 
         radio_kelamin.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

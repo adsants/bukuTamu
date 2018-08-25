@@ -74,21 +74,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
+
+                //// untuk onclick tombol add
                 startActivity(new Intent(MainActivity.this, AddActivity.class));
             }
         });
 
-        list_bukutamu       = findViewById(R.id.list_view);
-        data_buku_tamu      = new ArrayList<>();
+        list_bukutamu           = findViewById(R.id.list_view);
+        data_buku_tamu          = new ArrayList<>();
 
-        sqliteHelper        = new SqliteHelper(this);
+        sqliteHelper            = new SqliteHelper(this);
 
-        jumlah_perempuan    = findViewById(R.id.jumlah_perempuan);
-        jumlah_laki         = findViewById(R.id.jumlah_laki);
-        jumlah_keseluruhan  = findViewById(R.id.jumlah_keseluruhan);
-        text_hasil_pencarian  = findViewById(R.id.text_hasil_pencarian);
+        jumlah_perempuan        = findViewById(R.id.jumlah_perempuan);
+        jumlah_laki             = findViewById(R.id.jumlah_laki);
+        jumlah_keseluruhan      = findViewById(R.id.jumlah_keseluruhan);
+        text_hasil_pencarian    = findViewById(R.id.text_hasil_pencarian);
 
-        swipe_refresh       = findViewById(R.id.swipe_refresh);
+        swipe_refresh           = findViewById(R.id.swipe_refresh);
 
         swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -120,8 +122,10 @@ public class MainActivity extends AppCompatActivity {
                     " where (tanggal_input >= '"+tgl_mulai+"') and (tanggal_input <= '"+tgl_akhir+"')" +
                     "order by tanggal_input desc";
             query_total =   "select count(*) as jumlah_total," +
-                    "(select count(*) from transaksi where jenis_kelamin='Laki-Laki' and  (tanggal_input >= '"+tgl_mulai+"') and (tanggal_input <= '"+tgl_akhir+"')) as jumlah_laki," +
-                    "(select count(*) from transaksi where jenis_kelamin='Perempuan' and  (tanggal_input >= '"+tgl_mulai+"') and (tanggal_input <= '"+tgl_akhir+"')) as jumlah_perempuan " +
+                    "(select count(*) from transaksi where jenis_kelamin='Laki-Laki' and  (tanggal_input >= '"+tgl_mulai+"') " +
+                    "and (tanggal_input <= '"+tgl_akhir+"')) as jumlah_laki," +
+                    "(select count(*) from transaksi where jenis_kelamin='Perempuan' and  (tanggal_input >= '"+tgl_mulai+"') " +
+                    "and (tanggal_input <= '"+tgl_akhir+"')) as jumlah_perempuan " +
                     "from transaksi where (tanggal_input >= '"+tgl_mulai+"') and (tanggal_input <= '"+tgl_akhir+"')";
         }
 
@@ -171,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
 
         hitungJumlah();
 
+        /// menghilangkan loading refresh
         swipe_refresh.setRefreshing(false);
 
     }
@@ -200,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
         TextView text_hapus =   dialog.findViewById(R.id.text_hapus);
-        TextView text_edit =   dialog.findViewById(R.id.text_edit);
+        TextView text_edit  =   dialog.findViewById(R.id.text_edit);
 
         text_edit.setOnClickListener(new View.OnClickListener() {
             @Override
