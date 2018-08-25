@@ -143,7 +143,8 @@ public class MainActivity extends AppCompatActivity {
         cursor = db.rawQuery(query_data, null);
         cursor.moveToFirst();
 
-        for(int i=0; i < cursor.getCount(); i++ ){
+        int i;
+        for( i=0; i < cursor.getCount(); i++ ){
             cursor.moveToPosition(i);
 
             HashMap<String, String > map = new HashMap<>();
@@ -155,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
             map.put("tanggal", cursor.getString(5));
 
             data_buku_tamu.add(map);
+        }
+
+        if (i == 0){
+            Toast.makeText(getApplicationContext(), "Tidak ada transaksi untuk ditampilkan",
+                    Toast.LENGTH_LONG).show();
         }
 
         SimpleAdapter simpleAdapter =  new SimpleAdapter( this, data_buku_tamu, R.layout.list_view_adapter,
